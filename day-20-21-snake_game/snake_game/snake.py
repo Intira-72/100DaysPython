@@ -10,25 +10,31 @@ H_RIGHT = 0
 
 class Snake:
     def __init__(self):
-        self.segnents = []
+        self.segments = []
         self.create_snake()
-        self.head = self.segnents[0]
+        self.head = self.segments[0]
         
     # Create a snake body
     def create_snake(self):
-        for s in STARTING_POSITIONS:
-            squ = Turtle('square')
-            squ.color('#8899A6')
-            squ.penup()
-            squ.goto(s)
-            self.segnents.append(squ)
+        for position in STARTING_POSITIONS:
+            self.add_segment(position)
+
+    def add_segment(self, position):
+        squ = Turtle('square')
+        squ.color('#8899A6')
+        squ.penup()
+        squ.goto(position)
+        self.segments.append(squ)
+
+    def extend(self):
+        self.add_segment(self.segments[-1].position())
 
     # Snake Segments on Screen
     def move(self):
-        for seg_num in range(len(self.segnents) - 1, 0, -1):
-            new_x = self.segnents[seg_num - 1].xcor()
-            new_y = self.segnents[seg_num - 1].ycor()
-            self.segnents[seg_num].goto(new_x, new_y)
+        for seg_num in range(len(self.segments) - 1, 0, -1):
+            new_x = self.segments[seg_num - 1].xcor()
+            new_y = self.segments[seg_num - 1].ycor()
+            self.segments[seg_num].goto(new_x, new_y)
         self.head .forward(MOVE_DISTANCE)
 
 
