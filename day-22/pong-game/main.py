@@ -36,5 +36,8 @@ while game_is_on:
     if (ball.distance(r_paddle) < 50 and ball.xcor() > 350) or (ball.distance(l_paddle) < 60 and ball.xcor() < -360):
         ball.bounce_x()
 
+    if ball.xcor() > 380 or ball.xcor() < -390:
+        ball.home()
+
 
 screen.exitonclick()
