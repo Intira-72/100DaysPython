@@ -29,4 +29,8 @@ while game_is_on:
             print("damm!")
             game_is_on = False
 
+    if player.ycor() > 280:
+        player.next_level()
+        
+
 screen.exitonclick()
