@@ -1,4 +1,4 @@
-COLORS = ["red", "orange", "yellow", "green", "blue", "purple"]
+COLORS = ["red", "orange", "yellow", "pink", "blue", "purple"]
 STARTING_MOVE_DISTANCE = 5
 MOVE_INCREMENT = 10
 
