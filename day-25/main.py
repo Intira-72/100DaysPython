@@ -19,6 +19,24 @@
 
 import pandas
 
-data = pandas.read_csv("weather_data.csv")
-temperatures = list(data['temp'])
-print(temperatures)
+# data = pandas.read_csv("weather_data.csv")
+
+# temp_list = data['temp'].to_list()
+# temp_avg = data['temp'].mean()
+# temp_max = data.temp.max()
+
+# print(data[data.temp == data.temp.max()])
+
+# monday = data[data.day == "Monday"]
+# print(monday.condition)
+# print(monday.temp * 9/5 + 32)
+
+
+data_dict = {
+    'students': ['Amy', 'James', 'Angela'],
+    'scores': [76, 56, 65]
+}
+
+data = pandas.DataFrame(data_dict)
+data.to_csv("new_data.csv")
+
