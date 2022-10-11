@@ -1,9 +1,10 @@
+import os
 import smtplib
 import random
 import datetime as dt
 
-EMAIL_HOST_USER = "enicma.shop2022@gmail.com"
-EMAIL_HOST_PASSWORD = "vnvfhimxqntdmpwc"
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 
 def send_mail(quote, day_name):
     with smtplib.SMTP_SSL("smtp.gmail.com", 465) as connection:
